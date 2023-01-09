@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+       <h1>Encriptador</h1>
+    </header>
+
+
+    <main>
+        <section>
+
+        </section>
+
+
+        
+
+
+
+        <section>
+        </section>
+
+    </main>
+    <footer>
+       
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    function saltarLinea(){
+        document.write("<br>")
+    }
+    function separarTema(){
+        document.write("<hr>")
+    }
+    function grande(frase){
+        saltarLinea()
+        document.write("<big>"+frase+"</big>")
+    }
+    function imprimir(frase){
+        document.write(frase)
+        saltarLinea()
+    }
+    //input, proceso, output
+    function calcularImc(peso, altura){
+    
+        return (peso /(altura* altura))	
+    
+    }
+    
+    
+    var intentos = 10
+    var contador = 1
+    
+    while(contador <= intentos){
+        var numeroPensado = Math.round(Math.random()*10)
+        var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 10"))
+    if(numeroPensado == numeroLanzado){
+        alert("Usted acerto, en el intento " +contador +" el numero pensado era " +numeroPensado)
+        break
+    }else{
+        alert("Usted no acerto, el numero pensado era " + numeroPensado)
+    
+        }contador++
+        if(numeroPensado == numeroLanzado){
+            imprimir("usted acerto en el intento numero: " +contador)
+         }
+    }
+    
+</script>
