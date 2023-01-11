@@ -5,38 +5,77 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width"> 
+    <meta name="viewport" content="width=device-width">
     <title>Encriptador</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
 </head>
+
+
 
 <body>
 
     <header>
-       <h1>Encriptador</h1>
+        <h1><img class="brand" src="imgs/Logo.png" alt="Logo Alura"></h1>
     </header>
 
 
     <main>
-        <section>
+        <section class="encrypt">
+            <textarea wrap="soft" class="textEncrypt" placeholder="Ingrese el texto aquí" id="textEncrypt"
+                onkeyup="getValueInput()"></textarea>
+
+        </section>
+
+        <input type="button" value="Encriptar" class="btnEncrypt" onclick="myFunction()">
+
+        <input type="button" value="Desencriptar" class="btnDecrypt">
+
+
+
+
+
+
+
+
+        <section class="decrypt" id="decrypt">
+
+
+            <article class="welcome" id="welcome">
+
+                <img class="person" src="imgs/Muñeco.png" alt="Imagen de persona buscando">
+
+                <h2 class="textCenterBold">
+                    Ningún mensaje fue encontrado
+                </h2>
+                <p class="textCenter">
+                    Ingresa el texto que desees encriptar o desencriptar
+                </p>
+
+            </article>
+
+
+            <fieldset id="resultEncrypt">
+                <textarea class="valueInput" id="valueInput"></textarea>
+                <div class="secBtnCopy">
+                    <input type="button" value="Copiar" class="btnCopy" id="btnCopy">
+                </div>
+            </fieldset>
 
         </section>
 
 
-        
-
-
-
-        <section>
-        </section>
 
     </main>
     <footer>
-       
+
+
+
     </footer>
 
 </body>
@@ -44,44 +83,44 @@
 </html>
 
 <script>
-    function saltarLinea(){
-        document.write("<br>")
+
+    const getValueInput = () => {
+        let inputValue = document.getElementById("textEncrypt").value;
     }
-    function separarTema(){
-        document.write("<hr>")
+
+    function myFunction() {
+
+        let inputValue = document.getElementById("textEncrypt").value;
+        document.getElementById("welcome").style.display = "none";
+        document.getElementById("resultEncrypt").style.display = "block";
+        var x = document.getElementById("valueInput").innerHTML = inputValue;
+
     }
-    function grande(frase){
-        saltarLinea()
-        document.write("<big>"+frase+"</big>")
+/* const btnCopy = document.getElementById("btnCopy")
+        const getValueInput = () => {
+            let inputValue = document.getElementById("textEncrypt").value; 
+        document.getElementById("valueInput").innerHTML = inputValue; 
+    
+        }
+    
+        function myFunction() {
+    let inputValue = document.getElementById("textEncrypt").value; 
+     var x = document.getElementById("valueInput").innerHTML = inputValue; 
+    alert (x);
     }
-    function imprimir(frase){
-        document.write(frase)
-        saltarLinea()
-    }
-    //input, proceso, output
-    function calcularImc(peso, altura){
-    
-        return (peso /(altura* altura))	
-    
-    }
-    
-    
-    var intentos = 10
-    var contador = 1
-    
-    while(contador <= intentos){
-        var numeroPensado = Math.round(Math.random()*10)
-        var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 10"))
-    if(numeroPensado == numeroLanzado){
-        alert("Usted acerto, en el intento " +contador +" el numero pensado era " +numeroPensado)
-        break
-    }else{
-        alert("Usted no acerto, el numero pensado era " + numeroPensado)
-    
-        }contador++
-        if(numeroPensado == numeroLanzado){
-            imprimir("usted acerto en el intento numero: " +contador)
-         }
-    }
-    
+    */
+    /*
+    document.write(textToEncrypt)
+    function activar(){
+          let div = document.getElementById("nuevo_boton");
+          div.innerHTML = "<div><button id='b1'>Nuevo Botón</button></div>";
+        }
+        
+        function encrypt(){
+        let div = document.getElementById("decrypt")
+        div.innerHTML = "<div><button id='b1'>Nuevo Botón</button><p id='valueInput'></p></div>"
+        }
+        
+    */
+
 </script>

@@ -1,0 +1,123 @@
+body {
+    background: #F3F5FC;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.brand {
+    padding: 20px 50px;
+}
+
+.encrypt {
+    background: none;
+    padding: 20px 40px;
+    width: 50%;
+    height: 420px;
+}
+
+.textEncrypt {
+    background-color: #F3F5FC;
+    color: #0A3871;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 1em 2em;
+    box-shadow: 2px 2px 3px 2px rgb(16, 140, 198);
+    margin: 0 2em 10em 2em;
+    border-radius: 8px;
+}
+
+.btnEncrypt {
+    margin: 4em 2em 2em 4em;
+    width: 405px;
+    height: 40px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #D8DFE8;
+}
+
+.btnDecrypt {
+    width: 405px;
+    height: 40px;
+    background: #D8DFE8;
+    border-radius: 24px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #0A3871;
+}
+
+
+
+.decrypt {
+    position: absolute;
+    width: 400px;
+    height: 630px;
+    left: 1000px;
+    top: 40px;
+    background: rgba(10, 56, 113, 0.3);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+
+#resultEncrypt {
+    display: none
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person {
+    margin: 4em auto 2em auto;
+}
+
+.textCenterBold {
+    margin: 1em auto;
+    font-weight: 700;
+}
+
+.textCenter {
+    margin: 1em auto;
+    text-align: center;
+}
+
+.valueInput {
+    margin: 2em auto;
+    padding: 2em;
+    width: 300px;
+    height: 442px;
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #0A3871;
+    border: none;
+    background: none;
+}
+
+.secBtnCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnCopy {
+    width: 300px;
+    height: 40px;
+    background: #D8DFE8;
+    border-radius: 24px;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #0A3871;
+}
