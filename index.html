@@ -32,9 +32,9 @@
 
         </section>
 
-        <input type="button" value="Encriptar" class="btnEncrypt" onclick="myFunction()">
+        <input type="button" value="Encriptar" class="btnEncrypt" onclick="encrypting()">
 
-        <input type="button" value="Desencriptar" class="btnDecrypt">
+        <input type="button" value="Desencriptar" class="btnDecrypt" onclick="decrypting()">
 
 
 
@@ -74,7 +74,7 @@
     </main>
     <footer>
 
-
+        <h1 class="textCenter textCenterBold">Alura + Nataly Quiroga</h1>
 
     </footer>
 
@@ -88,15 +88,39 @@
         let inputValue = document.getElementById("textEncrypt").value;
     }
 
-    function myFunction() {
 
-        let inputValue = document.getElementById("textEncrypt").value;
+
+    function encrypting() {
+        let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
+
         document.getElementById("welcome").style.display = "none";
         document.getElementById("resultEncrypt").style.display = "block";
-        var x = document.getElementById("valueInput").innerHTML = inputValue;
-
+        var x = document.getElementById("valueInput").innerHTML =               
+        inputValue.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
     }
-/* const btnCopy = document.getElementById("btnCopy")
+
+    function decrypting() {
+        let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
+        
+        document.getElementById("welcome").style.display = "none";
+        document.getElementById("resultEncrypt").style.display = "block";
+        var x = document.getElementById("valueInput").innerHTML =               
+        inputValue.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
+    }
+/* 
+
+^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/
+function cambiarNombre(nombre){
+let regex = /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/;
+return regex.exec(nombre)[0];
+
+}
+console.log(cambiarNombre("ñoñerías"));
+
+
+
+
+const btnCopy = document.getElementById("btnCopy")
         const getValueInput = () => {
             let inputValue = document.getElementById("textEncrypt").value; 
         document.getElementById("valueInput").innerHTML = inputValue; 

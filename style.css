@@ -1,5 +1,5 @@
 body {
-    background: #F3F5FC;
+    background: rgba(143, 231, 251, 0.615);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -15,7 +15,7 @@ body {
 }
 
 .textEncrypt {
-    background-color: #F3F5FC;
+    background-color: rgba(10, 56, 113, 0.15);
     color: #0A3871;
     border: none;
     width: 100%;
