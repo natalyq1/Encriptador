@@ -2,11 +2,17 @@ body {
     background: rgba(143, 231, 251, 0.615);
     font-family: 'Montserrat', sans-serif;
 }
-
-.brand {
-    padding: 20px 50px;
+header, footer{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    color: #0A3871;
 }
 
+.nameWeb{
+    font-size: xx-large;
+    margin: 1.2em auto;
+    text-align:left;
+    padding-left: 7em;
+}
 .encrypt {
     background: none;
     padding: 20px 40px;
@@ -29,8 +35,21 @@ body {
     border-radius: 8px;
 }
 
+.warnCapLetters{
+    display: flex;
+    align-items: center;
+    color: #0A3871;
+    font-weight: 600;
+    padding-left: 10em;
+    margin-top: 2em;
+}
+
+.warnCapLetters{
+    gap: 0.3em;
+}
+
 .btnEncrypt {
-    margin: 4em 2em 2em 4em;
+    margin: 2em 2em 2em 4em;
     width: 405px;
     height: 40px;
     background: #0A3871;
@@ -120,4 +139,20 @@ body {
     font-weight: 400;
     font-size: 16px;
     color: #0A3871;
+}
+
+.footSection{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.nameCredits{
+    font-size: xx-large 
+}
+.nameCredits span{
+    margin-left: 1em ;
 }
