@@ -140,6 +140,15 @@ header, footer{
     font-size: 16px;
     color: #0A3871;
 }
+.btnCopy:hover{
+    background:linear-gradient(#248ebc,#0A3871);
+    color: #D8DFE8;
+}
+
+.btnCopy:active {
+    background:#D8DFE8;
+    transition: 300ms;
+}
 
 .footSection{
     display: flex;

@@ -67,7 +67,7 @@
             <fieldset id="resultEncrypt">
                 <textarea class="valueInput" id="valueInput"></textarea>
                 <div class="secBtnCopy">
-                    <input type="button" value="Copiar" class="btnCopy" id="btnCopy">
+                    <input type="button" value="Copiar" class="btnCopy" onclick="copyText()">
                 </div>
             </fieldset>
 
@@ -123,5 +123,11 @@
             
         }
 
+
+        function copyText(){
+    var content = document.getElementById('valueInput').innerHTML;
+
+    navigator.clipboard.writeText(content) 
+    }
 
 </script>
