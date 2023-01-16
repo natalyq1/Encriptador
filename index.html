@@ -88,63 +88,35 @@
         let inputValue = document.getElementById("textEncrypt").value;
     }
 
+    const accentCaractersVerification = /^[^A-ZÀ-ÿ0-9`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]+$/
 
-
-    function encrypting() {
-        let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
-
-        document.getElementById("welcome").style.display = "none";
-        document.getElementById("resultEncrypt").style.display = "block";
-        var x = document.getElementById("valueInput").innerHTML =               
-        inputValue.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
-    }
-
-    function decrypting() {
-        let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
+        function encrypting() {
+            let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
         
-        document.getElementById("welcome").style.display = "none";
-        document.getElementById("resultEncrypt").style.display = "block";
-        var x = document.getElementById("valueInput").innerHTML =               
-        inputValue.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
-    }
-/* 
-
-^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/
-function cambiarNombre(nombre){
-let regex = /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/;
-return regex.exec(nombre)[0];
-
-}
-console.log(cambiarNombre("ñoñerías"));
-
-
-
-
-const btnCopy = document.getElementById("btnCopy")
-        const getValueInput = () => {
-            let inputValue = document.getElementById("textEncrypt").value; 
-        document.getElementById("valueInput").innerHTML = inputValue; 
-    
+            if (accentCaractersVerification.test(inputValue)) {
+                document.getElementById("welcome").style.display = "none";
+                document.getElementById("resultEncrypt").style.display = "block";
+                var x = document.getElementById("valueInput").innerHTML = inputValue.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
+            
+            } else {
+                alert("No se permiten acentos, tíldes o carácteres especiales.")
+            }
         }
-    
-        function myFunction() {
-    let inputValue = document.getElementById("textEncrypt").value; 
-     var x = document.getElementById("valueInput").innerHTML = inputValue; 
-    alert (x);
-    }
-    */
-    /*
-    document.write(textToEncrypt)
-    function activar(){
-          let div = document.getElementById("nuevo_boton");
-          div.innerHTML = "<div><button id='b1'>Nuevo Botón</button></div>";
-        }
+
         
-        function encrypt(){
-        let div = document.getElementById("decrypt")
-        div.innerHTML = "<div><button id='b1'>Nuevo Botón</button><p id='valueInput'></p></div>"
+
+        function decrypting() {
+            let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
+            
+            if (accentCaractersVerification.test(inputValue)) {
+                document.getElementById("welcome").style.display = "none";
+                document.getElementById("resultEncrypt").style.display = "block";
+                var x = document.getElementById("valueInput").innerHTML = inputValue.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
+            } else {
+                alert("No se permiten acentos, tíldes o carácteres especiales.")
+            }
+            
         }
-        
-    */
+
 
 </script>
