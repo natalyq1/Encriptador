@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@400;500&display=swap"
+        rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body>
+
+    <header>
+        <h1 class="nameWeb">Encriptador - Desencriptador de texto versión Alura (código)</h1>
+    </header>
+
+
+    <main>
+        <section class="encrypt">
+            <textarea wrap="soft" class="textEncrypt" placeholder="Ingrese el texto aquí" id="textEncrypt"
+                ></textarea>
+
+        </section>
+        <p class="warnCapLetters"><img src="https://img.icons8.com/ios-filled/23/0A3871/error--v1.png" /><span></span>
+            El texto encriptado o desencriptado será en minúsculas.</p>
+        <input type="button" value="Encriptar" class="btnEncrypt" onclick="encrypting()">
+
+        <input type="button" value="Desencriptar" class="btnDecrypt" onclick="decrypting()">
+
+
+
+
+
+
+
+
+        <section class="decrypt" id="decrypt">
+
+
+            <article class="welcome" id="welcome">
+
+                <img class="person" src="../imgs/Muñeco.png" alt="Imagen de persona buscando">
+
+                <h2 class="textCenterBold">
+                    Ningún mensaje fue encontrado
+                </h2>
+                <p class="textCenter">
+                    Ingresa el texto que desees encriptar o desencriptar
+                </p>
+
+            </article>
+
+
+            <fieldset id="resultEncrypt">
+                <textarea class="valueInput" id="valueInput"></textarea>
+                <div class="secBtnCopy">
+                    <input type="button" value="Copiar" class="btnCopy" onclick="copyText()">
+                </div>
+            </fieldset>
+
+        </section>
+
+
+
+    </main>
+    <footer>
+
+        <section class="footSection">
+            <h1 class=""><img src="../imgs/Logo.png" alt="Logo Alura"></h1>
+            <h1 class="nameCredits"> + <span></span>Nataly Quiroga</h1>
+        </section>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+
+    const textArea = document.getElementById("textEncrypt")
+    const message = document.getElementById("valueInput")
+    const matrixCode = [['e', 'enter'], ['i', 'imes'], ['a', 'ai'], ['o', 'ober'], ['u', 'ufat']]
+
+    function encrypting() {
+        const textEncrypt = encryptingText(textArea.value)
+        message.value = textEncrypt
+        textArea.value = "";
+        document.getElementById("welcome").style.display = "none";
+        document.getElementById("resultEncrypt").style.display = "block";
+    }
+
+
+    function encryptingText(stringEncrypt) {
+        stringEncrypt = stringEncrypt.toLowerCase()
+
+        for (let i = 0; i < matrixCode.length; i++) {
+            if (stringEncrypt.includes(matrixCode[i][0])) {
+                stringEncrypt = stringEncrypt.replaceAll(matrixCode[i][0], matrixCode[i][1])
+            }
+        }
+        return stringEncrypt
+    }
+
+
+    function decrypting() {
+        const textEncrypt = decryptingText(textArea.value)
+        message.value = textEncrypt
+        textArea.value = "";
+        document.getElementById("welcome").style.display = "none";
+        document.getElementById("resultEncrypt").style.display = "block";
+    }
+
+    function decryptingText(stringDecrypt) {
+        stringDecrypt = stringDecrypt.toLowerCase()
+
+        for (let i = 0; i < matrixCode.length; i++) {
+            if (stringDecrypt.includes(matrixCode[i][1])) {
+                stringDecrypt = stringDecrypt.replaceAll(matrixCode[i][1], matrixCode[i][0])
+            }
+        }
+        return stringDecrypt
+    }
+
+    function copyText(){
+        navigator.clipboard.writeText(message.value) 
+    }
+
+
+    /*
+    
+    const getValueInput = () => {
+            let inputValue = document.getElementById("textEncrypt").value;
+        }
+    
+        const accentCaractersVerification = /^[^A-ZÀ-ÿ`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]+$/
+    
+                let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
+            
+                if (accentCaractersVerification.test(inputValue)) {
+                    document.getElementById("welcome").style.display = "none";
+                    document.getElementById("resultEncrypt").style.display = "block";
+                    var x = document.getElementById("valueInput").innerHTML = inputValue.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
+                
+                } else {
+                    alert("No se permiten acentos, tíldes o carácteres especiales.")
+                }
+            }
+    
+            
+    
+            function decrypting() {
+                let inputValue = document.getElementById("textEncrypt").value.toLowerCase();
+                
+                if (accentCaractersVerification.test(inputValue)) {
+                    document.getElementById("welcome").style.display = "none";
+                    document.getElementById("resultEncrypt").style.display = "block";
+                    var x = document.getElementById("valueInput").innerHTML = inputValue.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
+                } else {
+                    alert("No se permiten acentos, tíldes o carácteres especiales.")
+                }
+                
+            }
+    
+    
+            function copyText(){
+        var content = document.getElementById('valueInput').innerHTML;
+    
+        navigator.clipboard.writeText(content) 
+        }
+        */
+
+</script>
